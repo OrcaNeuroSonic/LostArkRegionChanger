@@ -66,12 +66,6 @@ Public Class Form1
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim xml As New XmlDocument
-        xml.Load(strConfig)
-        xml.SelectSingleNode("UserOption/SaveAccountOptionData/RegionID").InnerText = strRegionCode
-        Dim xw As XmlWriter = XmlWriter.Create(strConfig)
-        xml.WriteTo(xw)
-        xw.Close()
         'Process.Start("steam://rungameid/1599340")
         Dim psi As ProcessStartInfo = New ProcessStartInfo("steam://rungameid/1599340")
         psi.UseShellExecute = True
@@ -81,6 +75,11 @@ Public Class Form1
 
     Private Sub cbRegion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbRegion.SelectedIndexChanged
         strRegionCode = getCodeFromSelected(cbRegion.SelectedItem)
-
+        Dim xml As New XmlDocument
+        xml.Load(strConfig)
+        xml.SelectSingleNode("UserOption/SaveAccountOptionData/RegionID").InnerText = strRegionCode
+        Dim xw As XmlWriter = XmlWriter.Create(strConfig)
+        xml.WriteTo(xw)
+        xw.Close()
     End Sub
 End Class

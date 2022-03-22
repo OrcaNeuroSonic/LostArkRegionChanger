@@ -11,6 +11,9 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <AssemblyName>LostArkRegionChanger</AssemblyName>
     <ApplicationIcon>lost ark icon.ico</ApplicationIcon>
+    <Version>1.0.1</Version>
+    <Authors>OrcaNeuroSonic</Authors>
+    <Copyright>2022 OrcaNeuroSonic</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
